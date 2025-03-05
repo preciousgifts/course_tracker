@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="container">
+      <h1>Course Tracker</h1>
+      <button id="add-course-btn">Add Course</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Add Course Form (Hidden by Default) -->
+    <div id="add-course-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Add New Course</h2>
+        <form id="course-form">
+          <label for="course-name">Course Name</label>
+          <input type="text" id="course-name" name="course-name" required>
+
+          <label for="course-description">Description</label>
+          <textarea id="course-description" name="course-description"></textarea>
+
+          <label for="start-date">Start Date</label>
+          <input type="date" id="start-date" name="start-date" required>
+
+          <label for="end-date">End Date</label>
+          <input type="date" id="end-date" name="end-date">
+
+          <button type="submit">Add Course</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="filters">
+        <label for="status-filter">Filter by Status:</label>
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="active">Active</option>
+          <option value="upcoming">Upcoming</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div id="course-list" class="course-grid"></div>
+    </section>
+  </main>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>
